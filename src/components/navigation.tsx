@@ -6,6 +6,7 @@ interface MenuItemsProps {
   label: string;
   selected: boolean;
   onClick?: (e: { id: string }) => void;
+  baseUrl?: string; // Add this
 }
 
 interface MenuProps {
@@ -17,6 +18,9 @@ interface MenuProps {
 
 // MenuItem component uses the "id" instead of "key".
 function MenuItem(props: MenuItemsProps) {
+  const baseUrl = props.baseUrl || '';
+
+  console.log("Base url", baseUrl);
   return (
       <a  
       className={`menu-item ${props.selected ? 'menu-item-selected' : ''}`}
@@ -26,14 +30,13 @@ function MenuItem(props: MenuItemsProps) {
           props.onClick({ id: props.id });
         }
       }} 
-      href={props.id === 'home' ? '/' : `/${props.id}`}
+      href={props.id === 'home' ? `${baseUrl}` : `${baseUrl}${props.id}`}
       >{props.label}</a>
   );
 }
 
 // Menu component maps over its items and passes along the correct id.
-function Menu(props: MenuProps) {
-  console.log('Menu received selectedKeys:', props.selectedKeys);
+function Menu(props: MenuProps & { baseUrl?: string }) {
   
   return (
     <nav className={`menu menu-${props.mode}`}>
@@ -44,6 +47,7 @@ function Menu(props: MenuProps) {
             key={item.id}
             id={item.id}
             label={item.label}
+            baseUrl={props.baseUrl}
             onClick={() => {
               // Call the onClick passed to the Menu component.
               props.onClick({ id: item.id });
@@ -67,7 +71,7 @@ const MenuItems: MenuItemsProps[] = [
   { id: 'about', label: 'About us', onClick: (e) => console.log('Clicked:', e.id), selected: false  },
 ];
 
-const Navigation: React.FC = () => {
+const Navigation: React.FC<{ baseUrl?: string }> = ({ baseUrl = '' }) => {
   const [current, setCurrent] = useState<string>('');
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
@@ -107,7 +111,7 @@ const Navigation: React.FC = () => {
         <div className="mobile-nav">
           <div className="mobile-header">
             <div className="logo caret-transparent">
-              <a href="/">Logo</a>
+              <a href={baseUrl}>Logo</a>
             </div>
             <div className="hamburger caret-transparent" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
               {mobileMenuOpen ? '✕' : '☰'}
@@ -122,14 +126,15 @@ const Navigation: React.FC = () => {
               onClick={onClick} 
               selectedKeys={[current]} 
               mode="vertical" 
+              baseUrl={baseUrl}
             />
           </div>
         </div>
       )}
       { !isMobile && (
         <div style={{ borderBottom: '1px solid #f0f0f0'}} className='desktop-nav w-full flex flex-row grow text-center justify-center align-middle items-center'>
-          <a className="w-140 h-full px-2 no-underline outline-none" href="/">Logo</a>
-          <Menu items={updatedMenuItems} onClick={onClick} selectedKeys={[current]} mode="horizontal" />
+          <a className="w-140 h-full px-2 no-underline outline-none" href={baseUrl}>Logo</a>
+          <Menu items={updatedMenuItems} onClick={onClick} selectedKeys={[current]} mode="horizontal" baseUrl={baseUrl}/>
         </div>
       )}
     </div>
