@@ -10,5 +10,5 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   site: 'https://emmagonz22.github.io',
-  base: import.meta.env.PROD ? '/S.A.G.E-Website' : '/',
+  base: import.meta.env.PROD ? '/S.A.G.E-Website/' : '/',
 });
