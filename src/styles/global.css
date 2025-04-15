@@ -17,6 +17,13 @@
     width: 100%;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    color: var(--color-text);
+}
 
 .desktop-nav { display: flex; }
 .mobile-nav { display: none; }

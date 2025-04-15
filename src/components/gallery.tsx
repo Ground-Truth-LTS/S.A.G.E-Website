@@ -41,14 +41,14 @@ const Gallery: React.FC<GalleryProps> = ({
   const responsiveWidth = displayImages.length >= 4 ? width : calculatedWidth;
 
   const carouselStyle: React.CSSProperties = {
-    width: responsiveWidth,
+    width: '100%',
     margin: '0 auto',
   };
   
   const imageStyle: React.CSSProperties = {
     height,
     width: '100%',
-    objectFit: 'cover',
+    objectFit: 'contain',
     borderRadius: '8px',
   };
 

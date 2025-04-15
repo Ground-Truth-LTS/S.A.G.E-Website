@@ -67,12 +67,7 @@ const Footer: React.FC = () => {
             &copy; {currentYear} S.A.G.E Project. All rights reserved.
           </p>
           <div className="mt-4 md:mt-0">
-            <a href={import.meta.env.BASE_URL+"/privacy"} className="text-sm text-gray-400 hover:text-green-400 mr-4">
-              Privacy Policy
-            </a>
-            <a href={import.meta.env.BASE_URL+"/terms"} className="text-sm text-gray-400 hover:text-green-400">
-              Terms of Use
-            </a>
+
           </div>
         </div>
       </div>

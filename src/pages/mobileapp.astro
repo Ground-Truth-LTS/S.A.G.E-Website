@@ -1,10 +1,68 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import * as mobileAppContent from "../md-content/mobileappContent.md";
+import {Image} from "astro:assets";
+import startMobileApp from "../assets/start_mobile_app.png";
 
-const { titleEsp, titleInternalTool, contentEsp1, contentEsp2, contentInternalTool } = mobileAppContent.frontmatter;
+const { title, startContent, endContent, titleNextSteps, UXContent, titleFigma, videoLink } = mobileAppContent.frontmatter;
 ---
 
 <Layout>
-    <div class="flex flex-col min-h-screen"></div>
+    <div class="flex flex-col min-h-screen">
+        <h1 class="flex justify-center text-center pt-10">{title}</h1>
+        <div class="p-15">
+            <span class="flex flex-column py-5">
+                <span class="flex w-100 justify-center items-center">
+                    <img class="w-40" src={startMobileApp.src} alt="Current Progress"></img>
+                </span>
+             
+                <p class="w-full items-center">
+                    {startContent}
+                </p>
+            </span>
+            <span class="flex py-5">
+                <p class="w-full">
+                    {endContent}
+                </p>
+            </span>
+        </div>
+        <h1 class="flex justify-center text-center pt-10">{titleNextSteps}</h1>
+        <span>
+
+            <p>
+                {UXContent}
+            </p>
+        </span>
+        <div class="w-full h-full flex flex-col justify-center items-center my-6 p-10">
+
+            <h1 class="flex justify-center text-center pt-10">{titleFigma}</h1>
+
+            <iframe 
+                src={videoLink} 
+                title="Figma Prototype" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen
+                class="w-200 h-96">
+            </iframe>  
+        </div>
+      
+    </div>
 </Layout>
+
+<style>
+    @layer base {
+        h1 {
+            font-size: var(--text-6xl);
+            @media screen and (max-width: 768px) {
+                font-size: var(--text-4xl);
+            }
+            font-family: "Ubuntu sans", sans-serif;
+            font-weight: 900;
+        }
+    }
+
+    p {
+        font-family: "Inter", sans-serif;
+    }
+</style>

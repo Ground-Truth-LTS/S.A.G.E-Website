@@ -1,7 +1,11 @@
 ---
     title: "Mobile Application"
-    startContent: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur natus nemo numquam ratione officia nihil cumque itaque voluptatibus, facere, exercitationem recusandae quisquam alias et quas vero expedita iste architecto sapiente?"
-    endContent: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur natus nemo numquam ratione officia nihil cumque itaque voluptatibus, facere, exercitationem recusandae quisquam alias et quas vero expedita iste architecto sapiente?"
+    startContent: "The mobile application idea was born because of the limitation of the ESP32, since we were able to only use 4 MG of the ESP32, the internal with the html, css and js were getting bigger the space left was going down. So we decided to create a mobile, on which we can offload all the heavy work, and we are able to do a better and improve UI with ease of use for farmers. We decided to keep the WiFi Access point for the connection between the mobile phone and the ESP32, the same process that the Internal tool had to use. "
+    endContent: "The mobile application is developed with React Native for cross-platform compatibility (iOS and Android), utilizing the Tamagui library to enhance UI customization. Initially, an SQLite database embedded in the ESP32 was planned for local storage; however, due to memory and partition limitations, the database was instead shifted to the mobile app using Prisma for schema-based data management and type safety. Communication between the ESP32 and mobile app now occurs through RESTful APIs, simplifying interactions and clearly separating data acquisition from processing tasks. The application interface allows users to view and manage logs stored both locally on their phones and remotely on the ESP32, including starting and stopping recording sessions, editing logs, and sorting data entries by date."
+    titleNextSteps: "Future work"
+    UXContent: "Users interact with the system via a mobile application connected to the ESP32's Wi-Fi access point, enabling them to manage soil-monitoring activities directly from their phones. The application allows users to start and stop data recording sessions using a simple navigation button, view stored logs from both the device and their mobile storage, and edit or delete individual log entries through an intuitive toolbar interface. Additionally, farmers can easily sort and visualize historical soil data by date, ensuring quick access to relevant insights for timely decision-making."
+    titleFigma: "Figma Prototype"
+    videoLink: "https://www.youtube.com/embed/8lfyl_ysaVI"
 ---
 
 

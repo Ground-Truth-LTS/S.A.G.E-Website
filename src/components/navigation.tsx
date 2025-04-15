@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState} from 'react';
 import "../styles/global.css";
+import SageLogo from '../assets/SAGE_logo.png';
 
 interface MenuItemsProps {
   id: string;
@@ -110,8 +111,11 @@ const Navigation: React.FC<{ baseUrl?: string }> = ({ baseUrl = '' }) => {
       {isMobile && (
         <div className="mobile-nav">
           <div className="mobile-header">
-            <div className="logo caret-transparent">
-              <a href={baseUrl}>Logo</a>
+            <div className="caret-transparent">
+              <a href={baseUrl}> 
+                <img className="logo" src={SageLogo.src}></img>
+              </a>
+             
             </div>
             <div className="hamburger caret-transparent" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
               {mobileMenuOpen ? '✕' : '☰'}
@@ -133,7 +137,9 @@ const Navigation: React.FC<{ baseUrl?: string }> = ({ baseUrl = '' }) => {
       )}
       { !isMobile && (
         <div style={{ borderBottom: '1px solid #f0f0f0'}} className='desktop-nav w-full flex flex-row grow text-center justify-center align-middle items-center'>
-          <a className="w-140 h-full px-2 no-underline outline-none" href={baseUrl}>Logo</a>
+          <a className="w-140 h-full flex justify-center px-2 no-underline outline-none" href={baseUrl}>   
+            <img className="logo" src={SageLogo.src}></img>
+          </a>
           <Menu items={updatedMenuItems} onClick={onClick} selectedKeys={[current]} mode="horizontal" baseUrl={baseUrl}/>
         </div>
       )}
