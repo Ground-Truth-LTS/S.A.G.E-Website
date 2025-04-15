@@ -1,7 +1,7 @@
 ---
     titleEsp: "ESP32 Device"
     titleInternalTool: "Internal Tool"
-    contentEsp1: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur natus nemo numquam ratione officia nihil cumque itaque voluptatibus, facere, exercitationem recusandae quisquam alias et quas vero expedita iste architecto sapiente?"
-    contentEsp2: "When the Device start running, it will create its own WIFI Access Point Network. This Access Point is use to connect to the Device and to control de sensor, either by using the mobile app or the internal tool."
+    contentEsp1: "Currently the device is in its protoyping phase, as sensors are still being added. as of now the current sensors we have are: Soil Moisture & Temperature, Ambient Humidity & Temperature. Next sensors to add are NPK & pH which will be added soon. And the next possible sensors are Light Sensors. These added sensors can allow us to plan for the future, serving as the groundwork for a recommendation system based on your actual hardiness zone."
+    contentEsp2: "This is a diagram of the system architecture. When the device is active, it will create its own Wi-Fi Access Point Network. Which facillitates the communication between the User and the ESP32, with two available user interfaces, the Internal Tool and the Mobile Application. Simply by connecting to the network and accessing the address."
     contentInternalTool: "The ESP32's Internal Tool is design to do the basic functionalities of the devices, the main purpose of this existing is to have a way to control de Device without having Device, since we can't rely on the user always having a smartphone with the Mobile Application. The Internal tool is a Website that is hosted in the ESP32 Webserver, it can be used by connecting to the ESP32's Access Point, opening the browser and opening the 192.168.4.1."
 ---
