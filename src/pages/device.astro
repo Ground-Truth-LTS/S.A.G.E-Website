@@ -6,7 +6,8 @@ import SystemDesign from "../assets/diagrams/updated_system_design.jpg";
 import ESP32Connection from "../assets/ESP32Connection.jpg"
 import Gallery from "../components/gallery.tsx";
 import ESP32ConnectionCloseUp from "../assets/ESP32ConnectionCloseUp.jpg";
-
+import InternalTool1 from "../assets/InternalTool1.png"; 
+import InternalTool2 from "../assets/InternalTool2.png"; 
 const { titleEsp, titleInternalTool, contentEsp1, contentEsp2, contentInternalTool } = deviceContent.frontmatter;
 ---
 
@@ -35,8 +36,8 @@ const { titleEsp, titleInternalTool, contentEsp1, contentEsp2, contentInternalTo
             <!-- Place holder images for the internal tool -->
             <Gallery client:only
             images={[
-                { src: SystemDesign.src, alt: "Description 1" },
-                { src: SystemDesign.src, alt: "Description 2" },
+                { src: InternalTool1.src, alt: "Description 1" },
+                { src: InternalTool2.src, alt: "Description 2" },
             ]}/>
         </div>
   
