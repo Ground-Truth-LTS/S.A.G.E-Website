@@ -5,6 +5,7 @@ import * as deviceContent from "../md-content/deviceContent.md";
 import SystemDesign from "../assets/diagrams/updated_system_design.jpg";
 import ESP32Connection from "../assets/ESP32Connection.jpg"
 import Gallery from "../components/gallery.tsx";
+import ESP32ConnectionCloseUp from "../assets/ESP32ConnectionCloseUp.jpg";
 
 const { titleEsp, titleInternalTool, contentEsp1, contentEsp2, contentInternalTool } = deviceContent.frontmatter;
 ---
@@ -15,14 +16,14 @@ const { titleEsp, titleInternalTool, contentEsp1, contentEsp2, contentInternalTo
         <span class="flex is-mobile flex-row justify-center items-center">
             <div class="flex flex-col items-center px-3">
                 <div class="min-h-75 rounded-lg w-full mb-4 flex items-center justify-center align-center">
-                    <Image src={ESP32Connection} alt="ESP32 Device Design" class="max-w-75 max-h-full object-cover"/>
+                    <Image src={ESP32ConnectionCloseUp} alt="ESP32 Device Design" class="max-w-75 max-h-full object-cover"/>
                 </div>
                 <p>{contentEsp1}</p>
             </div>
             <div class="flex flex-col items-center px-3">
                 <div class="min-h-75 rounded-lg w-full mb-4 flex items-center justify-center align-center">
                     <!-- Replace image to the wired ESP32 -->
-                    <Image src={SystemDesign} alt="ESP32 Device Design" class="max-w-75 max-h-full object-cover"/>
+                    <Image src={SystemDesign} alt="ESP32 Device Design" class="max-w-100 max-h-full object-cover"/>
                 </div>
                 <p>{contentEsp2}</p>
             </div>
