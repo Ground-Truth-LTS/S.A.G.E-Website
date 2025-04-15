@@ -25,9 +25,9 @@ import { Button } from "antd";
             </div>
         </div>
 
-        <div class="w-full h-full flex flex-col items-center justify-center py-30 px-20">
-                <h2 class="text-center pb-8">Objective</h2>
-                <p>
+        <div class="w-full h-full flex flex-col items-center justify-center py-30 px-8">
+                <h4 class="text-center pb-8">Objective</h4>
+                <p class="pb-10">
                     The primary objective of the S.A.G.E. project is to develop a user-friendly,
                     IoT-based soil monitoring system using ESP32 microcontrollers and affordable
                     sensors, providing real-time tracking of key soil parameters such as moisture,
@@ -43,7 +43,7 @@ import { Button } from "antd";
 
                 </p>
 
-                <h2 class="text-center pb-8">The Problem</h2>
+                <h4 class="text-center pb-8">The Problem</h4>
                 <p>
                     Soil conditions can change rapidly, often without visible warnings. 
                     Contaminants like heavy metals, or excess chemical fertilizers can seep into the soil.
@@ -108,6 +108,17 @@ import { Button } from "antd";
             font-size: var(--text-2xl);
             font-family: "Ubuntu sans", sans-serif;
         }
+
+        h4 {
+            font-size: var(--text-4xl);
+            @media screen and (max-width: 768px) {
+                font-size: var(--text-3xl);
+            }
+            font-family: "Ubuntu sans", sans-serif;
+            font-weight: 700;
+
+        }
+
         a {
             color: var(--color-blue-600);
             text-decoration-line: underline;

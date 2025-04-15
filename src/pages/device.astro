@@ -12,10 +12,10 @@ const { titleEsp, titleInternalTool, contentEsp1, contentEsp2, contentInternalTo
 ---
 
 <Layout>
-    <div class="flex flex-col min-h-screen mx-20 my-10">        
+    <div class="flex flex-col min-h-screen px-4 my-10">        
         <h1>{titleEsp}</h1>
         <span class="flex is-mobile flex-row justify-center items-center">
-            <div class="flex flex-col items-center px-3">
+<div class="flex flex-col items-center px-3">
                 <div class="min-h-75 rounded-lg w-full mb-4 flex items-center justify-center align-center">
                     <Image src={ESP32ConnectionCloseUp} alt="ESP32 Device Design" class="max-w-75 max-h-full object-cover"/>
                 </div>
@@ -24,15 +24,14 @@ const { titleEsp, titleInternalTool, contentEsp1, contentEsp2, contentInternalTo
             <div class="flex flex-col items-center px-3">
                 <div class="min-h-75 rounded-lg w-full mb-4 flex items-center justify-center align-center">
                     <!-- Replace image to the wired ESP32 -->
-                    <Image src={SystemDesign} alt="ESP32 Device Design" class="max-w-100 max-h-full object-cover"/>
+                    <Image src={SystemDesign} alt="ESP32 Device Design" class="max-w-100 max-h-full object-cover"                    />
                 </div>
                 <p>{contentEsp2}</p>
             </div>
         </span>
         <h1 class="pt-10">{titleInternalTool}</h1>
-
         <p>{contentInternalTool}</p>
-        <div class="w-full flex justify-center mt-6">
+        <div class="w-full flex justify-center">
             <!-- Place holder images for the internal tool -->
             <Gallery client:only
             images={[
@@ -83,4 +82,4 @@ const { titleEsp, titleInternalTool, contentEsp1, contentEsp2, contentInternalTo
     p {
         font-family: 'Inter', sans-serif;
     }
-</style>
+    </style>

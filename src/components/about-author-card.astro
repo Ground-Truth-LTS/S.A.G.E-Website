@@ -32,7 +32,6 @@ const { authorname, background, task, email, image} = Astro.props;
     </div>
     <h2 class="font-type pt-4">{authorname}</h2>
     <p class="py-3"><span class="font-bold">Task: </span>{task}</p>
-    <p class="py-3"><span class="font-bold">Background: </span>{background}</p>
     <p class="py-3">
       <span class="font-bold">Email: </span><a href={`mailto:${email}`}>{email}</a>
     </p>

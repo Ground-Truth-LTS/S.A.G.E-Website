@@ -16,9 +16,8 @@ import Footer from '../components/footer.tsx';
 
 		<meta name="generator" content={Astro.generator} />
 		<title>S.A.G.E</title>
-	</head>
-	<body>
-		<Navigation baseUrl={import.meta.env.BASE_URL} client:load/>
+	</head>	<body>
+		<Navigation baseUrl={import.meta.env.BASE_URL} client:only="react"/>
 		<slot />
 		<Footer/>
 	</body>
