@@ -14,7 +14,7 @@
         - name: "Bryan D. Vega González"
           background: "Lorem"
           email: "bryan.vega7@upr.edu"
-          task: "Task: Built the local database in the mobile application, defining the schema for devices, sessions, and sensor data. Implemented RESTful API endpoints to manage data flow between the ESP32 and the mobile app."
+          task: "Built the local database in the mobile application, defining the schema for devices, sessions, and sensor data. Implemented RESTful API endpoints to manage data flow between the ESP32 and the mobile app."
           image: "bryanHeadshot"
 ---
 
