@@ -10,6 +10,6 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   //site: 'https://emmagonz22.github.io',
-  site: 'https://groundtruthlts.xyz/'
+  site: 'https://groundtruthlts.xyz'
   /*base: import.meta.env.PROD ? '/S.A.G.E-Website/' : '/',*/
 });
