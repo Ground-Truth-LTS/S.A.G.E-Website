@@ -4,6 +4,7 @@ import {Image} from "astro:assets";
 import dummyPerson from "../assets/TeamMembers/dummyPerson.jpeg";
 import emmanuelHeadshot from "../assets/TeamMembers/emmanuel-headshot.jpeg";
 import eithanHeadshot from "../assets/TeamMembers/EithanPhoto.jpg";
+import bryanHeadshot from "../assets/TeamMembers/BryanPhoto.jpg";
 
 export interface Props {
   authorname: string;
@@ -17,6 +18,7 @@ const imageMap: Record<string, ImageMetadata> = {
   "dummyPerson": dummyPerson,
   "emmanuelHeadshot": emmanuelHeadshot,
   "eithanHeadshot": eithanHeadshot,
+  "bryanHeadshot" : bryanHeadshot
 };
 
 const { authorname, background, task, email, image} = Astro.props;
