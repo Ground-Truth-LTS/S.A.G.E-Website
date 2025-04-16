@@ -1,5 +1,5 @@
+import '../styles/global.css';
 import React, { useEffect, useState} from 'react';
-import "../styles/global.css";
 import SageLogo from '../assets/SAGE_logo.png';
 
 interface MenuItemsProps {
@@ -7,7 +7,6 @@ interface MenuItemsProps {
   label: string;
   selected: boolean;
   onClick?: (e: { id: string }) => void;
-  baseUrl?: string; // Add this
 }
 
 interface MenuProps {
@@ -19,9 +18,6 @@ interface MenuProps {
 
 // MenuItem component uses the "id" instead of "key".
 function MenuItem(props: MenuItemsProps) {
-  const baseUrl = props.baseUrl || '';
-
-  console.log("Base url", baseUrl);
   return (
       <a  
       className={`menu-item ${props.selected ? 'menu-item-selected' : ''}`}
@@ -31,13 +27,13 @@ function MenuItem(props: MenuItemsProps) {
           props.onClick({ id: props.id });
         }
       }} 
-      href={props.id === 'home' ? `${baseUrl}` : `${baseUrl}${props.id}`}
+      href={props.id === 'home' ? `/` : `/${props.id}`}
       >{props.label}</a>
   );
 }
 
 // Menu component maps over its items and passes along the correct id.
-function Menu(props: MenuProps & { baseUrl?: string }) {
+function Menu(props: MenuProps) {
   
   return (
     <nav className={`menu menu-${props.mode}`}>
@@ -48,7 +44,6 @@ function Menu(props: MenuProps & { baseUrl?: string }) {
             key={item.id}
             id={item.id}
             label={item.label}
-            baseUrl={props.baseUrl}
             onClick={() => {
               // Call the onClick passed to the Menu component.
               props.onClick({ id: item.id });
@@ -72,7 +67,7 @@ const MenuItems: MenuItemsProps[] = [
   { id: 'about', label: 'About us', onClick: (e) => console.log('Clicked:', e.id), selected: false  },
 ];
 
-const Navigation: React.FC<{ baseUrl?: string }> = ({ baseUrl = '' }) => {
+const Navigation: React.FC = () => {
   const [current, setCurrent] = useState<string>('');
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
@@ -112,7 +107,7 @@ const Navigation: React.FC<{ baseUrl?: string }> = ({ baseUrl = '' }) => {
         <div className="mobile-nav">
           <div className="mobile-header">
             <div className="caret-transparent">
-              <a href={baseUrl}> 
+              <a href="/"> 
                 <img className="logo" src={SageLogo.src}></img>
               </a>
              
@@ -130,17 +125,16 @@ const Navigation: React.FC<{ baseUrl?: string }> = ({ baseUrl = '' }) => {
               onClick={onClick} 
               selectedKeys={[current]} 
               mode="vertical" 
-              baseUrl={baseUrl}
             />
           </div>
         </div>
       )}
       { !isMobile && (
         <div style={{ borderBottom: '1px solid #f0f0f0'}} className='desktop-nav w-full flex flex-row grow text-center justify-center align-middle items-center'>
-          <a className="w-140 h-full flex justify-center px-2 no-underline outline-none" href={baseUrl}>   
+          <a className="w-140 h-full flex justify-center px-2 no-underline outline-none" href="/">   
             <img className="logo" src={SageLogo.src}></img>
           </a>
-          <Menu items={updatedMenuItems} onClick={onClick} selectedKeys={[current]} mode="horizontal" baseUrl={baseUrl}/>
+          <Menu items={updatedMenuItems} onClick={onClick} selectedKeys={[current]} mode="horizontal"/>
         </div>
       )}
     </div>

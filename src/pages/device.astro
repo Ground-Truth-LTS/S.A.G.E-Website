@@ -12,25 +12,43 @@ const { titleEsp, titleInternalTool, contentEsp1, contentEsp2, contentInternalTo
 ---
 
 <Layout>
-    <div class="flex flex-col min-h-screen px-4 my-10">        
-        <h1>{titleEsp}</h1>
-        <span class="flex is-mobile flex-row justify-center items-center">
-<div class="flex flex-col items-center px-3">
-                <div class="min-h-75 rounded-lg w-full mb-4 flex items-center justify-center align-center">
-                    <Image src={ESP32ConnectionCloseUp} alt="ESP32 Device Design" class="max-w-75 max-h-full object-cover"/>
+    <div class="flex flex-col min-h-screen px-4 my-10">          
+        <h1 class="text-center mb-6">{titleEsp}</h1>        
+        <div class="flex flex-col md:flex-row gap-8 justify-center max-w-6xl mx-auto">
+            <div class="flex flex-col items-center px-3 md:w-1/2 h-full">
+                <div class="image-container mb-4 w-full max-w-sm mx-auto">
+                    <Image 
+                        src={ESP32Connection} 
+                        alt="ESP32 Device Design" 
+                        width={350}
+                        height={240}
+                        quality={90}
+                        class="shadow-md w-full h-auto object-cover rounded-lg"
+                    />
                 </div>
-                <p>{contentEsp1}</p>
-            </div>
-            <div class="flex flex-col items-center px-3">
-                <div class="min-h-75 rounded-lg w-full mb-4 flex items-center justify-center align-center">
-                    <!-- Replace image to the wired ESP32 -->
-                    <Image src={SystemDesign} alt="ESP32 Device Design" class="max-w-100 max-h-full object-cover"                    />
+                <div class="w-full">
+                    <p class="text-lg leading-relaxed h-full">{contentEsp1}</p>
                 </div>
-                <p>{contentEsp2}</p>
             </div>
-        </span>
-        <h1 class="pt-10">{titleInternalTool}</h1>
-        <p>{contentInternalTool}</p>
+            <div class="flex flex-col items-center px-3 md:w-1/2 h-full">
+                <div class="image-container mb-4 w-full max-w-sm mx-auto">
+                    <!-- System design image -->
+                    <Image 
+                        src={SystemDesign} 
+                        alt="System Design Diagram" 
+                        width={350}
+                        height={240}
+                        quality={90}
+                        class="shadow-md w-full h-auto object-cover rounded-lg"
+                    />
+                </div>
+                <div class="w-full">
+                    <p class="text-lg leading-relaxed">{contentEsp2}</p>
+                </div>
+            </div>
+        </div>
+        <h1 class="pt-10 text-center mb-6">{titleInternalTool}</h1>
+        <p class="text-lg leading-relaxed pb-5 px-3">{contentInternalTool}</p>
         <div class="w-full flex justify-center">
             <!-- Place holder images for the internal tool -->
             <Gallery client:only
@@ -78,8 +96,22 @@ const { titleEsp, titleInternalTool, contentEsp1, contentEsp2, contentInternalTo
             flex-direction: column;
             align-items: center;
         }
-    }
-    p {
+    }    p {
         font-family: 'Inter', sans-serif;
     }
-    </style>
+    
+    /* Image container with fixed height */
+    .image-container {
+        height: 240px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    
+    .image-container img {
+        max-height: 100%;
+        width: auto;
+        object-fit: contain;
+    }
+</style>
