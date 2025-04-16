@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import Navigation from '../components/navigation.tsx';
 import Footer from '../components/footer.tsx';
+import { ClientRouter } from "astro:transitions"; 
 ---
 
 <!doctype html>
@@ -9,6 +10,8 @@ import Footer from '../components/footer.tsx';
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
+
+		<ClientRouter/> <!-- Astro View Transitions https://docs.astro.build/en/guides/view-transitions/ -->
 
 		<link rel="icon" type="image/svg+xml" href={"favicon.svg"} />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
