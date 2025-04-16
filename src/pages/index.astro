@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Button } from "antd";
-import { DownloadOutlined } from '@ant-design/icons';
+import { Download } from '@lucide/astro';
 import SAGE_progress_report from "../assets/pdf/SAGE_progress_report.pdf";
 ---
 
@@ -18,16 +17,17 @@ import SAGE_progress_report from "../assets/pdf/SAGE_progress_report.pdf";
                 <a 
                     href={SAGE_progress_report} 
                     target="_blank" 
-                    rel="noopener noreferrer">
+                    rel="noopener noreferrer"
+                    class="no-underline"
+                    >
 
-                    <Button 
-                        className="btn" 
-                        client:only="react"
-                        type="primary"
-        
+                    <button 
+                        class="btn flex justify-center items-center px-4 py-2 
+                            rounded-lg shadow-md hover:bg-green-600 transition duration-300 ease-in-out" 
                     >
                         Download Progress Report
-                    </Button>
+                        <Download style={{'margin-left': "10px"}} size={19}/>
+                    </button>
                 </a>
                     
             </div>
@@ -46,9 +46,6 @@ import SAGE_progress_report from "../assets/pdf/SAGE_progress_report.pdf";
                     soil data, manage multiple devices, and support historical analysis, thereby 
                     promoting sustainable farming practices and enhancing crop productivity through 
                     accessible technology.
-
-
-
                 </p>
 
                 <h4 class="text-center pb-8">The Problem</h4>
@@ -137,6 +134,7 @@ import SAGE_progress_report from "../assets/pdf/SAGE_progress_report.pdf";
         background-color: var(--color-primary);
         font-family: 'Inter', sans-serif;
         min-height: 40px;
+        color: white;
     }
     .btn:hover{
         background-color: var(--color-hover) !important;
