@@ -21,10 +21,11 @@ import { ClientRouter } from "astro:transitions";
 
 		<meta name="generator" content={Astro.generator} />
 		<title>S.A.G.E</title>
-	</head>	<body>
-		<Navigation client:load/>
+	</head>	
+	<body>
+		<Navigation client:load transition:persist transition:name="navbar"/>
 		<slot/>
-		<Footer/>
+		<Footer transition:persist/>
 	</body>
 </html>
 

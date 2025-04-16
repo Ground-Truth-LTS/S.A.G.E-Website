@@ -14,22 +14,16 @@ const { title, persons } = aboutData.frontmatter;
 
     <div class="w-full">
       <div class="about-group w-full">
-        {(() => {
-            const items = [];
-            for (let i = 0; i < persons.length; i++) {
-              const person = persons[i];
-              items.push(
-                <AboutAuthorCard
-                  authorname={person.name}
-                  task={person.task}
-                  background={person.background}
-                  email={person.email}
-                  image={person.image}
-                />
-              );
-            }
-            return items;
-          })()}
+        {persons.map((person: any) => (
+          <AboutAuthorCard
+            transition:name={`card-${person.email}`}
+            authorname={person.name}
+            task={person.task}
+            background={person.background}
+            email={person.email}
+            image={person.image}
+          />
+        ))}
       </div>
     </div>
   </div>

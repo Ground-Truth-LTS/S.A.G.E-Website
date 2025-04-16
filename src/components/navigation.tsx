@@ -78,11 +78,15 @@ const Navigation: React.FC = () => {
     setIsMobile(window.innerWidth < 768);
   };
   useEffect(() => {
-    const pathSegments = window.location.pathname.split('/');
-    // The first element is empty (because pathnames start with a slash)
-    const currentPath = pathSegments[1] || 'home';
-    setCurrent(currentPath);
-    console.log('Setting current path to:', currentPath);
+
+    // const update = () => { 
+    //   const pathSegments = window.location.pathname.split('/');
+    //   // The first element is empty (because pathnames start with a slash)
+    //   const currentPath = pathSegments[1] || 'home';
+    //   setCurrent(currentPath);
+    // }
+
+    // update(); // initial check
 
     handleResize(); // initial check
     window.addEventListener('resize', handleResize);
