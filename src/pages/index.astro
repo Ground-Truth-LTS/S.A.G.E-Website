@@ -2,35 +2,56 @@
 import Layout from '../layouts/Layout.astro';
 import { Download } from '@lucide/astro';
 import SAGE_progress_report from "../assets/pdf/SAGE_progress_report.pdf";
+import SAGE_logo from "../assets/SAGE_logo_white.png";
+import android_logo from "../assets/android-icon.svg";
 ---
 
 <Layout>
 
     <div class="flex flex-col min-h-screen">
         <div class="w-full title-box flex flex-col items-center justify-center px-8">
-            <span class="w-full flex flex-col justify-center">
-                <h1 class="text-center">S.A.G.E</h1>
-                <h2 class="text-center">Soil Analysis & Ground Evaluation</h2>
+            <span class="relative logo-position  w-full flex flex-col justify-center items-center">
+                <img src={SAGE_logo.src} alt="SAGE Logo" class="logo-size w-[400px] h-auto mx-auto"/>
+                <h2 class="subtitle text-center pb-4 pt-10">Soil Analysis & Ground Evaluation</h2>
+                <h2 class="subtitle text-center px-4">Grow Better Plant Smarter</h2>
             </span>
         
-            <div class="w-full flex justify-center mt-24">
+            <div class="absolute btn-collection w-full flex justify-center">
                 <a 
                     href={SAGE_progress_report} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    class="no-underline"
+                    class="no-underline m-2"
                     >
 
                     <button 
-                        class="btn flex justify-center items-center px-4 py-2 
+                        class="btn flex justify-center items-center px-4 py-2 w-[150px]
                             rounded-lg shadow-md hover:bg-green-600 transition duration-300 ease-in-out" 
                     >
-                        Download Progress Report
+                        Presentation
+                        <Download style={{'margin-left': "10px"}} size={19}/>
+                    </button>
+                </a>
+
+                 <a 
+                    href={SAGE_progress_report} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="no-underline m-2 w-[100]"
+                    >
+
+                    <button 
+                        class="btn-android flex justify-center items-center px-4 py-2 w-[150px]
+                            rounded-lg shadow-md hover:bg-green-600 transition duration-300 ease-in-out" 
+                    >
+                        <img src={android_logo.src} alt="Android Logo" class="w-6 h-6"  style={{'margin-right': "10px"}}/>
+                        APK
                         <Download style={{'margin-left': "10px"}} size={19}/>
                     </button>
                 </a>
                     
             </div>
+
         </div>
 
         <div class="w-full h-full flex flex-col items-center justify-center py-30 px-8">
@@ -136,18 +157,58 @@ import SAGE_progress_report from "../assets/pdf/SAGE_progress_report.pdf";
         min-height: 40px;
         color: white;
     }
+
+    .btn-android{
+        background-color: white;
+        font-family: 'Inter', sans-serif;
+        min-height: 40px;
+        color: black;
+    }
+
+    .btn-collection {
+        margin-top: 54px;
+        @media screen and (max-width: 768px) {
+            margin-top: 24px;
+        }
+    }
     .btn:hover{
         background-color: var(--color-hover) !important;
     }
     .title-box {
-        background-image: url('../assets/background_index.jpg');
+        background-image: url('../assets/home_background.jpg');
         background-size: cover;
-        background-position: center;
+        background-position: center calc(-64px); 
         background-repeat: no-repeat;
         width: 100%;
-        height: calc(100vh - 64px);
+        height: 100vh;
+
     }
 
+    .logo-position {
+        top: -23px;
+        left: 3.5px;
+        @media screen and (max-width: 768px) {
+            top: -25px;
+            left: 3px;
+        }
+    }
+    .subtitle {
+        font-size: var(--text-2xl);
+        @media screen and (max-width: 768px) {
+            font-size: var(--text-lg);
+        }
+        font-family: "Ubuntu sans", sans-serif;
+        font-weight: 700;
+    }
+    .logo-size {
+        @media screen and (max-width: 768px) {
+            width: 280px;
+        }
+    }
+
+    .btn-collection{
+        top: calc(75%);
+    }
     p {
         font-family: 'Inter', sans-serif;
     }
