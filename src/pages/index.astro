@@ -32,8 +32,9 @@ import presentation from "../assets/deliverables/sage_presentation.pdf";
                     >
 
                     <button 
-                        class="btn flex justify-around items-center px-4 py-2 w-[170px]
-                            rounded-lg shadow-md hover:bg-green-600 transition duration-300 ease-in-out" 
+                        class="btn flex justify-around items-center px-4 py-2 w-[160px]
+                            rounded-lg shadow-md hover:bg-green-600 transition duration-300 ease-in-out
+                            active:opacity-60" 
                     >
                         Presentation
                         <Download size={19}/>
@@ -48,8 +49,10 @@ import presentation from "../assets/deliverables/sage_presentation.pdf";
             >
 
                 <button 
-                    class="btn-android flex justify-around items-center px-4 py-2 w-[170px]
-                        rounded-lg shadow-md hover:bg-green-600 transition duration-300 ease-in-out" 
+                    class="btn-android flex justify-around items-center px-4 py-2 w-[160px]
+                        rounded-lg shadow-md hover:bg-green-600 transition duration-300 ease-in-out
+                        disabled:opacity-50 disabled:cursor-not-allowed"
+                    disabled 
                 >
                     <img src={android_logo.src} alt="Android Logo" class="w-6 h-6"/>
                     APK
@@ -67,8 +70,9 @@ import presentation from "../assets/deliverables/sage_presentation.pdf";
                 class="no-underline m-2"
             >
                 <button 
-                    class="btn flex justify-around items-center px-4 py-2 w-[170px]
-                        rounded-lg shadow-md hover:bg-green-600 transition duration-300 ease-in-out" 
+                    class="btn flex justify-around items-center px-4 py-2 w-[160px]
+                        rounded-lg shadow-md hover:bg-green-600 transition duration-300 ease-in-out
+                        active:opacity-60" 
                 >
                     Elevator Pitch
                     <ExternalLink size={19}/>
@@ -82,8 +86,9 @@ import presentation from "../assets/deliverables/sage_presentation.pdf";
                 class="no-underline m-2"
             >
                 <button 
-                    class="btn-android flex justify-around items-center px-4 py-2 w-[170px]
-                        rounded-lg shadow-md hover:bg-green-600 transition duration-300 ease-in-out" 
+                    class="btn-android flex justify-around items-center px-4 py-2 w-[160px]
+                        rounded-lg shadow-md hover:bg-green-600 transition duration-300 ease-in-out
+                        hover:opacity-80 active:opacity-60" 
                 >
                     <Github size={19}/>
                     Github
@@ -95,9 +100,9 @@ import presentation from "../assets/deliverables/sage_presentation.pdf";
     </section>
 
     <section class="objective-section w-full h-full flex flex-wrap gap-8 md:py-16 px-8">
-        <div class="flex w-full md:flex-row flex-col justify-around items-start">
+        <div class="flex w-full md:flex-row flex-col justify-around items-start ">
             <div class="row-style flex flex-col justify-center items-start min-w-[300px] max-w-[400px]">
-                <h4 class="text-left pb-4">Objective</h4>
+                <h4 class="text-left pb-4 pt-8 md:pt-4">Objective</h4>
                 <p class="h-full items-center">
                     The S.A.G.E. project aims to create a user-friendly IoT-based soil monitoring system using ESP32 microcontrollers and affordable sensors. 
                     It provides real-time tracking of key soil parameters like moisture, pH, temperature, and nutrient levels (NPK). 
@@ -105,14 +110,14 @@ import presentation from "../assets/deliverables/sage_presentation.pdf";
                 </p>
             </div>
 
-            <div class="flex h-full self-center justify-center items-center min-w-[250px] max-w-[400px]">
+            <div class="flex h-full self-center justify-center items-center min-w-[250px] max-w-[400px] p-4">
                 <img src={device_opened.src} alt="Objective Image" class="w-full h-auto rounded-lg shadow-md" />
             </div>
         </div>
 
 
-        <div class="flex w-full md:flex-row flex-col-reverse justify-around items-start">
-            <div class="flex h-full self-center justify-center items-center min-w-[250px] max-w-[400px]">
+        <div class="flex w-full md:flex-row flex-col-reverse justify-around items-start ">
+            <div class="flex h-full self-center justify-center items-center min-w-[250px] max-w-[400px] px-3 pb-10">
                 <img src={device_plant.src} alt="Problem Image" class="w-full h-auto rounded-lg shadow-md" />
             </div>
 
