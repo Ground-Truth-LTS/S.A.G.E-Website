@@ -30,10 +30,11 @@ const { authorname, task, email, image} = Astro.props;
       <img src={imageMap[image].src} alt={`${authorname}`} class="caret-transparent max-w-50 rounded-md mx-auto"/>
     </div>
     <h2 class="font-type pt-4">{authorname}</h2>
-    <p class="py-3"><span class="font-bold">Task: </span>{task}</p>
     <p class="py-3">
       <span class="font-bold">Email: </span><a href={`mailto:${email}`}>{email}</a>
     </p>
+    <p class="py-3"><span class="font-bold">Task: </span>{task}</p>
+ 
 </div>
 
 <style>

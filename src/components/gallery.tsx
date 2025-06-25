@@ -42,7 +42,12 @@ const Gallery: React.FC<GalleryProps> = ({
 
   const carouselStyle: React.CSSProperties = {
     width: '100%',
+    maxWidth: '400px',
     margin: '0 auto',
+    backgroundColor: '#1e2939',
+    paddingTop: '30px',
+    paddingBottom: '30px',
+    borderRadius: '8px',
   };
   
   const imageStyle: React.CSSProperties = {
@@ -54,7 +59,7 @@ const Gallery: React.FC<GalleryProps> = ({
 
   return (
     <div style={carouselStyle}>
-      <Carousel autoplay>
+      <Carousel autoplay arrows>
         {displayImages.map((image, index) => (
           <div key={index} className="carousel-item">
             <img 
